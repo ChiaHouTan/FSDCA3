@@ -23,6 +23,12 @@ const CommentSchema  = new mongoose.Schema({
     type      : String,
     required  : true,
     validator : value => !validator.isEmpty(value)
+  },
+
+  image:  {
+    type      : String,
+    required  : true,
+    validator : value => !validator.isEmpty(value)
   }
 
 }, SchemeConfig);

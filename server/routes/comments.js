@@ -44,7 +44,8 @@ router.post('/', (req, res) => {
   return new Comment({
     authoredBy: req.body.authoredBy,
     forTopic  : req.body.forTopic,
-    content   : req.body.content
+    content   : req.body.content,
+    image     : req.body.image
   })
   .save()
   .then (comment => Comment.populate(comment, {path: 'authoredBy'}))
@@ -72,7 +73,9 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
     .findOneAndUpdate(
       {_id: req.params.id},
       {$set: {
-        content: req.body.content
+        title  : req.body.title,
+        content: req.body.content,
+        image: req.body.image
       }},
       {new: true}
     )

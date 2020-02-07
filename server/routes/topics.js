@@ -43,7 +43,8 @@ router.post('/', (req, res) => {
   return new Topic({
     authoredBy: req.body.authoredBy,
     title     : req.body.title,
-    content   : req.body.content
+    content   : req.body.content,
+    image     : req.body.image
   })
   .save()
   .then (topic => Topic.populate(topic, {path: 'authoredBy'}))
@@ -72,7 +73,8 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       {_id: req.params.id},
       {$set: {
         title  : req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        image: req.body.image
       }},
       {new: true}
     )
