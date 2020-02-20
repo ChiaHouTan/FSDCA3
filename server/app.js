@@ -4,7 +4,7 @@ const cookieParser   = require('cookie-parser');
 const logger         = require('morgan');
 const topicsRouter   = require('./routes/topics');
 const commentsRouter = require('./routes/comments');
-const gamePreviewRouter = require('./routes/gamePreview');
+const gamePreviewsRouter = require('./routes/gamePreviews');
 const app            = express();
 const mongoose       = require('mongoose');
 const config         = require('./config.json');
@@ -40,7 +40,7 @@ app.use(function(req, res, next) {
 // Note 2 routers, one for each data resource (topics and comments)
 app.use('/topics',   topicsRouter);
 app.use('/comments', commentsRouter);
-app.use('/gamePreview', gamePreviewRouter);
+app.use('/gamePreviews', gamePreviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
