@@ -1,49 +1,49 @@
 const express  = require('express');
 const router   = express.Router();
 const mongoose = require('mongoose'); // using to generate ObjectIDs
-const GamePreview   = require('../models/GamePreview').GamePreview;
+const Cake   = require('../models/Cake').Cake;
 
 /**
  * Functionality for this route:
- *  C   POST    /GamePreviews/        Create a new GamePreview
- *  R   GET     /GamePreviews         Gets an array of all GamePreviews
- *  R   GET     /GamePreviews/:id     Get a single GamePreview, by ID
- *  U   PUT     /GamePreviews/:id     Update a single GamePreview, by id
- *  D   DELETE  /GamePreviews/:id     Delete a single GamePreview, by ID
+ *  C   POST    /Cakes/        Create a new Cake
+ *  R   GET     /Cakes         Gets an array of all Cakes
+ *  R   GET     /Cakes/:id     Get a single Cake, by ID
+ *  U   PUT     /Cakes/:id     Update a single Cake, by id
+ *  D   DELETE  /Cakes/:id     Delete a single Cake, by ID
  */
 
-// GET an array of all GamePreviews change
+// GET an array of all Cakes change
 router.get('/', (req, res) => {
     return mongoose
-      .model('GamePreview')
+      .model('Cake')
       .find({})
-      .then (gamePreviews => res.json(gamePreviews))
+      .then (cakes => res.json(cakes))
       .catch(err => res
         .status(500)
         .json({ok: false})
       );
   });
 
-  // GET a single gamePreview by ID
+  // GET a single cake by ID
 router.get('/:id([0-9a-fA-F]{24})', (req, res) => {
   return mongoose
-    .model('GamePreview')
+    .model('Cake')
     .findOne({_id: req.params.id})
-    .then (gamePreview => res.json(gamePreview))
+    .then (cake => res.json(cake))
     .catch(err => res
       .status(500)
       .json({ok: false})
     );
 });
 
-// POST Create a new gamePreview
+// POST Create a new cake
 router.post('/', (req, res) => {
-  return new GamePreview({
+  return new Cake({
     title     : req.body.title,
   })
   .save()
-  .then (gamePreview => GamePreview.populate(gamePreview, {path: '_id'}))
-  .then (gamePreview => res.json(gamePreview))
+  .then (cake => Cake.populate(cake, {path: '_id'}))
+  .then (cake => res.json(cake))
   .catch(err => res
     .status(400)
     .json({ok: false, error: err.message})
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 
 // DELETE Delete a topic with a given ID
 router.delete('/:id([0-9a-fA-F]{24})', (req, res) => {
-  return GamePreview
+  return Cake
     .deleteOne({_id: req.params.id})
     .then (() => res.json({'ok': true}))
     .catch(err => res
@@ -61,9 +61,9 @@ router.delete('/:id([0-9a-fA-F]{24})', (req, res) => {
     );
 });
 
-// PUT Update a gamePreview
+// PUT Update a cake
 router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
-  return GamePreview
+  return Cake
     .findOneAndUpdate(
       {_id: req.params.id},
       {$set: {
@@ -71,8 +71,8 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       }},
       {new: true}
     )
-    .then (gamePreview => GamePreview.populate(gamePreview, {path: '_id'}))
-    .then (gamePreview => res.json(gamePreview))
+    .then (cake => Cake.populate(cake, {path: '_id'}))
+    .then (cake => res.json(cake))
     .catch(err => res
       .status(500)
       .json({ok: false})

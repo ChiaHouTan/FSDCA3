@@ -2,7 +2,7 @@ const mongoose  = require('mongoose');
 const validator = require('validator');
 
 const SchemeConfig = {timestamps: true, skipVersioning: true};
-const GamePreviewSchema  = new mongoose.Schema({
+const CakeSchema  = new mongoose.Schema({
 
     title: {
       type      : String,
@@ -12,4 +12,4 @@ const GamePreviewSchema  = new mongoose.Schema({
 
   }, SchemeConfig);
 
-  module.exports.GamePreview = mongoose.model('GamePreview', GamePreviewSchema);
+  module.exports.Cake = mongoose.model('Cake', CakeSchema);

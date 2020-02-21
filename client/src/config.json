@@ -1,5 +1,3 @@
 {
-  "topicsAPI"  : ":3000/topics",
-  "commentsAPI": ":3000/comments",
-  "gamePreviewsAPI": ":3000/gamePreviews"
+  "cakesAPI": ":3000/cakes"
 }
