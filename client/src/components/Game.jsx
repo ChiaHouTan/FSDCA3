@@ -1,7 +1,13 @@
 import React              from 'react';
 import {Link}             from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
-import * as Config        from '../config.json'
+import * as Config        from '../config.json';
+import '../components/sass/AllScss.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
+
+
 
 class Game extends React.Component {
 
@@ -31,10 +37,56 @@ class Game extends React.Component {
       );
     } else {
       return (
-        <div>
-          <h1>{this.state.game.title}</h1>
-          <Link to='/'>Back to All games</Link>
+        
+        <body>
+        <link
+        
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+        <div class="gameB">
+
+          <table>
+           <tr>
+             <th colspan="2" class="gameTitle">{this.state.game.title}</th>
+           </tr>
+           <tr>
+             <th>Genre: {this.state.game.genre}</th>
+             <th>Date Release: {this.state.game.releaseDate}</th>
+           </tr>
+          </table>
+
+          <Carousel>
+  <Carousel.Item>
+  <img src={this.state.game.image} alt="Smiley face"></img>
+  </Carousel.Item>
+  
+  <Carousel.Item>
+  <img src={this.state.game.image2} alt="Smiley face"></img>
+  </Carousel.Item>
+
+  <Carousel.Item>
+  <img src={this.state.game.image3} alt="Smiley face"></img>
+  </Carousel.Item>
+</Carousel>
+
+
+
+          
+          <br></br>
+
+          <iframe src={this.state.game.trailer} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+           <br></br>
+           <br></br>
+          <Button variant="dark"><Link to='/' class="textBold">Back to All games</Link></Button>
+          <br></br>
         </div>
+
+        
+       </body> 
       )
     }
   }

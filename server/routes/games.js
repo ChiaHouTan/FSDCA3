@@ -41,7 +41,10 @@ router.post('/', (req, res) => {
   return new Game({
     title     : req.body.title,
     genre     : req.body.genre,
+    releaseDate : req.body.releaseDate,
     image   : req.body.image,
+    image2   : req.body.image2,
+    image3   : req.body.image3,
     trailer   : req.body.trailer,
   })
   .save()
@@ -72,7 +75,10 @@ router.put('/:id([0-9a-fA-F]{24})', (req, res) => {
       {$set: {
         title  : req.body.title,
         genre   : req.body.genre,
+        releaseDate : req.body.releaseDate,
         image   : req.body.image,
+        image2   : req.body.image2,
+        image3   : req.body.image3,
         trailer   : req.body.trailer,
       }},
       {new: true}
