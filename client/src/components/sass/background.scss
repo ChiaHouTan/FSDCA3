@@ -1,0 +1,15 @@
+
+$myColor: radial-gradient(farthest-corner at 30vw 20vh,#1861CD 1%,#3f2c41 100%);
+$purpleColor: radial-gradient(farthest-corner at 30vw 20vh,#8618CD 1%,#3f2c41 100%);
+
+
+body {
+    background: $myColor;
+  }
+
+body{
+  .gameList{
+    background: $purpleColor;
+  }
+
+}
