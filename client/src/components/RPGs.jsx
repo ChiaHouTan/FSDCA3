@@ -34,7 +34,7 @@ class RPGs extends React.Component {
       );
     } else {
       return (
-        <body class="gameList">
+        <body>
 <link  
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -42,7 +42,7 @@ class RPGs extends React.Component {
         crossorigin="anonymous"
       />
 
-        <div>
+        <div class="gameB2 gameList">
           <h1>Role-Playing-Games</h1>
           
 

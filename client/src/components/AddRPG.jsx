@@ -3,7 +3,7 @@ import {navigate, Link}   from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
-class AddGame extends React.Component {
+class AddRPG extends React.Component {
 
   // #######################################################
   // # Local state
@@ -34,14 +34,34 @@ class AddGame extends React.Component {
       );
     } else {
       return (
-        <div>
-          <h1>Add a game</h1>
+        <body>
+        <div class="gameList">
+        <div class="addStyle">
+          <h1 class="textBlue">Add a Role-Playing-Game</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
 
-            <div>
-              <label>game Title:
+            <div class="textBold textWhite">
+              <label>game Title: 
                 <input type='' value={this.state.title} onChange={this.handleTitleUpdate.bind(this)} />
-              </label>
+              </label><br></br>
+              <label>game Genre:
+                <input type='' value={this.state.genre} onChange={this.handleGenreUpdate.bind(this)} />
+               </label><br></br>
+              <label>game Date Release:
+                <input type='' value={this.state.releaseDate} onChange={this.handleReleaseDateUpdate.bind(this)} pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"/>
+              </label><p class="textItalic">e.g dd/mm/yyyy</p>
+              <label>game Image1:
+                <input class="inputImage" type='' value={this.state.image} onChange={this.handleImageUpdate.bind(this)} />
+              </label><br></br>
+              <label>game Image2:
+                <input class="inputImage" type='' value={this.state.image2} onChange={this.handleImage2Update.bind(this)} />
+              </label><br></br>
+              <label>game Image3:
+                <input class="inputImage" type='' value={this.state.image3} onChange={this.handleImage3Update.bind(this)} />
+              </label><br></br>
+              <label>game Trailer video:
+                <input class="inputVideo" type='' value={this.state.trailer} onChange={this.handleTrailerUpdate.bind(this)} pattern="(https://www.youtube.com/embed/)[a-zA-Z0-9]+"/>
+              </label><p class="textItalic">e.g https://www.youtube.com/embed/8989ABAB</p><br></br>
             </div>
 
             {/* <div>
@@ -51,12 +71,14 @@ class AddGame extends React.Component {
             </div> */}
 
             <div>
-              <input type='submit' value='Add Game' />
+              <input type='submit' value='Add RPG' />
             </div>
 
           </form>
           <Link to='/'>Back to All games</Link>
         </div>
+        </div>
+        </body>
       );
     }
   }
@@ -65,8 +87,24 @@ class AddGame extends React.Component {
     this.setState({title: e.target.value || null});
   }
 
-  handleContentUpdate(e) {
-    this.setState({content: e.target.value || null});
+  handleGenreUpdate(e) {
+    this.setState({genre: e.target.value || null});
+  }
+
+  handleReleaseDateUpdate(e) {
+    this.setState({releaseDate: e.target.value || null});
+  }
+  handleImageUpdate(e) {
+    this.setState({image: e.target.value || null});
+  }
+  handleImage2Update(e) {
+    this.setState({image2: e.target.value || null});
+  }
+  handleImage3Update(e) {
+    this.setState({image3: e.target.value || null});
+  }
+  handleTrailerUpdate(e) {
+    this.setState({trailer: e.target.value || null});
   }
 
   handleSubmit(e) {
@@ -83,7 +121,12 @@ class AddGame extends React.Component {
       body: JSON.stringify({
         authoredBy: this.state.authoredBy,
         title     : this.state.title,
-        content   : this.state.content
+        genre     : this.state.genre,
+        releaseDate : this.state.releaseDate,
+        image   : this.state.image,
+        image2   : this.state.image2,
+        image3   : this.state.image3,
+        trailer   : this.state.trailer,
       })}
     )
       .then (res  => {
@@ -109,4 +152,4 @@ class AddGame extends React.Component {
 
 }
 
-export default AddGame;
+export default AddRPG;
