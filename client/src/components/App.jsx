@@ -4,6 +4,7 @@ import {Router} from "@reach/router";
 import RPGs   from './RPGs';
 import Game    from './Game';
 import AddRPG from './AddRPG';
+import EditGame from './EditGame';
 import '../components/sass/AllScss.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Tabs from 'react-bootstrap/Tabs';
@@ -24,6 +25,8 @@ class App extends React.Component {
         <RPGs   path='/' />
         <Game    path='/game/:gameID' />
         <AddRPG path='/add-game/' />
+        <EditGame path='/edit-game/:gameID' />
+
       </Router>
       </Tab>
       <Tab className="tabStyle" eventKey="Computers" title="Computers">
