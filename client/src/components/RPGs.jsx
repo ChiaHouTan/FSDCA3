@@ -43,7 +43,7 @@ class RPGs extends React.Component {
       />
 
         <div class="gameB2 gameList">
-          <h1>Role-Playing-Games</h1>
+          <h1>Games Database</h1>
           
 
 <Table striped bordered hover>
@@ -80,12 +80,14 @@ class RPGs extends React.Component {
 
 
 
-          <p><Link to='/add-game'>Add a new Game</Link></p>
+          <p><Link to='/add-game'><button class="textBold">Add a new Game</button></Link></p>
         </div>
        </body> 
       )
     }
   }
+
+
   
 
   handleDelete(e) {

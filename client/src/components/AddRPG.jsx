@@ -37,31 +37,35 @@ class AddRPG extends React.Component {
         <body>
         <div class="gameList">
         <div class="addStyle">
-          <h1 class="textBlue">Add a Role-Playing-Game</h1>
+          <h1 class="textBlue">Add a Game</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
 
             <div class="textBold textWhite">
               <label>game Title: 
-                <input type='' value={this.state.title} onChange={this.handleTitleUpdate.bind(this)} />
+                <input type='' value={this.state.title} onChange={this.handleTitleUpdate.bind(this)} required/>
               </label><br></br>
               <label>game Genre:
-                <input type='' value={this.state.genre} onChange={this.handleGenreUpdate.bind(this)} />
+                <input type='' value={this.state.genre} onChange={this.handleGenreUpdate.bind(this)} required/>
                </label><br></br>
               <label>game Date Release:
-                <input type='' value={this.state.releaseDate} onChange={this.handleReleaseDateUpdate.bind(this)} pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"/>
-              </label><p class="textItalic">e.g dd/mm/yyyy</p>
+                <input class="textItalic" type='' value={this.state.releaseDate} onChange={this.handleReleaseDateUpdate.bind(this)} 
+                placeholder="e.g dd/mm/yyyy"
+                pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$" required/>
+              </label>
               <label>game Image1:
-                <input class="inputImage" type='' value={this.state.image} onChange={this.handleImageUpdate.bind(this)} />
+                <input class="inputImage" type='' value={this.state.image} onChange={this.handleImageUpdate.bind(this)} required/>
               </label><br></br>
               <label>game Image2:
-                <input class="inputImage" type='' value={this.state.image2} onChange={this.handleImage2Update.bind(this)} />
+                <input class="inputImage" type='' value={this.state.image2} onChange={this.handleImage2Update.bind(this)} required/>
               </label><br></br>
               <label>game Image3:
-                <input class="inputImage" type='' value={this.state.image3} onChange={this.handleImage3Update.bind(this)} />
+                <input class="inputImage" type='' value={this.state.image3} onChange={this.handleImage3Update.bind(this)} required/>
               </label><br></br>
               <label>game Trailer video:
-                <input class="inputVideo" type='' value={this.state.trailer} onChange={this.handleTrailerUpdate.bind(this)} pattern="(https://www.youtube.com/embed/)[a-zA-Z0-9]+"/>
-              </label><p class="textItalic">e.g https://www.youtube.com/embed/8989ABAB</p><br></br>
+                <input class="inputVideo textItalic" type='' value={this.state.trailer} onChange={this.handleTrailerUpdate.bind(this)} 
+                placeholder="e.g https://www.youtube.com/embed/8989ABAB"
+                pattern="(https://www.youtube.com/embed/)[a-zA-Z0-9]+" required/>
+              </label><br></br>
             </div>
 
             {/* <div>
@@ -71,11 +75,12 @@ class AddRPG extends React.Component {
             </div> */}
 
             <div>
-              <input type='submit' value='Add RPG' />
+              <input type='submit' value='Add Game' />
             </div>
 
           </form>
-          <Link to='/'>Back to All games</Link>
+          <br></br>
+          <Link to='/'><button class="textBold">Back to All games</button></Link>
         </div>
         </div>
         </body>

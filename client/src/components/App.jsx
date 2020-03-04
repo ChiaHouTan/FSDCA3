@@ -19,8 +19,8 @@ class App extends React.Component {
 
       <div class="gameB">
 
-      <Tabs className="tabStyle" defaultActiveKey="RPG" id="uncontrolled-tab-example">
-      <Tab className="tabStyle" eventKey="RPG" title="RPG">
+      <Tabs className="tabStyle" defaultActiveKey="Games" id="uncontrolled-tab-example">
+      <Tab className="tabStyle" eventKey="Games" title="Games">
       <Router>
         <RPGs   path='/' />
         <Game    path='/game/:gameID' />
