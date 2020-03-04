@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "d132d761-3445-42f1-8ec0-4d618e135e5c",
-		"name": "Games Testing API",
+		"_postman_id": "da93c09c-3816-4a08-890c-db8c8becda2b",
+		"name": "Games Testing API 2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -25,7 +25,7 @@
 			"response": []
 		},
 		{
-			"name": "Post a game",
+			"name": "post a game",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -38,7 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\" :\"Monster Hunter\",\n    \"genre\" : \"Action\",\n    \"image\" : \"https://img.redbull.com/images/c_crop,x_204,y_0,h_590,w_472/c_fill,w_1150,h_1438/q_70,f_auto/redbullcom/2017/12/14/b5050af1-7d98-4926-82c5-82173a71f569/monster-hunter-world\",\n    \"trailer\" : \"https://youtu.be/Ro6r15wzp2o\"\n}",
+					"raw": "{\n\t\"title\" :\"Monster Hunter\",\n    \"genre\" : \"Action\",\n    \"image\" : \"https://img.redbull.com/images/c_crop,x_204,y_0,h_590,w_472/c_fill,w_1150,h_1438/q_70,f_auto/redbullcom/2017/12/14/b5050af1-7d98-4926-82c5-82173a71f569/monster-hunter-world\",\n    \"image2\" : \"test image2\",\n    \"image3\" : \"test image3\",\n    \"releaseDate\" : \"Test Date\",\n    \"trailer\" : \"https://youtu.be/Ro6r15wzp2o\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -73,7 +73,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n    \"title\" : \"Monster Hunter World Iceborne\",\r\n    \"genre\" : \"Action RPG\",\r\n    \"image\" : \"https://beta.hitc.com/static/uploads/hitcn/1709/monster_hunter_world_iceborne_on_pc_directx_12_stuttering_and_fr_1450621-768x432.jpg\",\r\n    \"trailer\" : \"https://youtu.be/m6guHcGEqX8\"\r\n    }",
+					"raw": "{\n\t\"title\" :\"test put title\",\n    \"genre\" : \"test put Action\",\n    \"image\" : \"https://img.redbull.com/images/c_crop,x_204,y_0,h_590,w_472/c_fill,w_1150,h_1438/q_70,f_auto/redbullcom/2017/12/14/b5050af1-7d98-4926-82c5-82173a71f569/monster-hunter-world\",\n    \"image2\" : \"test put image2\",\n    \"image3\" : \"test put image3\",\n    \"releaseDate\" : \"Test put Date\",\n    \"trailer\" : \"https://youtu.be/Ro6r15wzp2o put\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -81,7 +81,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/games/5e4fba5110498615904845ac",
+					"raw": "http://localhost:3000/games/5e5fc8533db8533a38fc8233",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,27 +89,7 @@
 					"port": "3000",
 					"path": [
 						"games",
-						"5e4fba5110498615904845ac"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete a game by ID",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/games/5e4fba5110498615904845ac",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"games",
-						"5e4fba5110498615904845ac"
+						"5e5fc8533db8533a38fc8233"
 					]
 				}
 			},
@@ -121,7 +101,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/games/5e45a0d150b212aaa7b693e7",
+					"raw": "http://localhost:3000/games/5e5fc8533db8533a38fc8233",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,7 +109,27 @@
 					"port": "3000",
 					"path": [
 						"games",
-						"5e45a0d150b212aaa7b693e7"
+						"5e5fc8533db8533a38fc8233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a game by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/games/5e5fc8533db8533a38fc8233",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"games",
+						"5e5fc8533db8533a38fc8233"
 					]
 				}
 			},
