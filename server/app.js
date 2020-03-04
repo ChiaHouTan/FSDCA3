@@ -3,6 +3,7 @@ const express        = require('express');
 const cookieParser   = require('cookie-parser');
 const logger         = require('morgan');
 const gamesRouter    = require('./routes/games');
+const consolesRouter    = require('./routes/consoles');
 const app            = express();
 const mongoose       = require('mongoose');
 const config         = require('./config.json');
@@ -29,7 +30,7 @@ mongoose
 // Global middleware & * -- not safe, but easy for example
 app.use(function(req, res, next) {
   res.set('Access-Control-Allow-Origin',  '*');
-  res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
   res.set('Access-Control-Allow-Headers', 'Content-Type')
   next();
 });
@@ -38,6 +39,7 @@ app.use(function(req, res, next) {
 // Note 2 routers, one for each data resource (topics and comments)
 //app.use('/topics',   topicsRouter);
 app.use('/games', gamesRouter);
+app.use('/consoles', consolesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

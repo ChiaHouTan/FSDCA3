@@ -1,3 +1,4 @@
 {
-  "gamesAPI": ":3000/games"
+  "gamesAPI": ":3000/games",
+  "consolesAPI":  ":3000/consoles"
 }
