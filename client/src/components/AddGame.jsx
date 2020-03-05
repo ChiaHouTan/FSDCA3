@@ -64,7 +64,7 @@ class AddGame extends React.Component {
               <label>game Trailer video:
                 <input class="inputVideo textItalic" type='' value={this.state.trailer} onChange={this.handleTrailerUpdate.bind(this)} 
                 placeholder="e.g https://www.youtube.com/embed/8989ABAB"
-                pattern="(https://www.youtube.com/embed/)[a-zA-Z0-9]+" required/>
+                pattern="(https://www.youtube.com/embed/)[^\&\?\/]+" required/>
               </label><br></br>
             </div>
 

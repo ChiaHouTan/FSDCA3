@@ -30,7 +30,10 @@ class Games extends React.Component {
       );
     } else if (this.state.games.length === 0) {
       return (
+        <div>
         <p>Sorry, no games are available</p>
+        <p><Link to='/add-game'><button class="textBold">Add a new Game</button></Link></p>
+        </div>
       );
     } else {
       return (
@@ -43,12 +46,12 @@ class Games extends React.Component {
       />
 
         <div class="gameB2 gameList">
-          <h1>Games Database</h1>
+          <h1 class="textWhite">Games Database</h1>
           
 
 <Table striped bordered hover>
   <thead>
-    <tr>
+    <tr class="textWhite">
       <th>Title</th>
       <th>Date Release</th>
       <th>Edit</th>
@@ -60,8 +63,8 @@ class Games extends React.Component {
 
   {this.state.games.map(game => (
   
-    <tr key={`game_${game._id}`}>
-      <td ><Link to={`/game/${game._id}`}>{game.title}</Link> </td>
+    <tr class="textWhite" key={`game_${game._id}`}>
+      <td ><Link class="textWhite" to={`/game/${game._id}`}>{game.title}</Link> </td>
       <td>{game.releaseDate}</td>
       <td><Link to={`/edit-game/${game._id}`}><button>Edit</button></Link></td>
 

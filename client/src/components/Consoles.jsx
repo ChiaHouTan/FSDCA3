@@ -30,7 +30,10 @@ class Consoles extends React.Component {
       );
     } else if (this.state.consoles.length === 0) {
       return (
+        <div>
         <p>Sorry, no consoles are available</p>
+        <p><Link to='/add-console'><button class="textBold">Add a new Console</button></Link></p>
+        </div>
       );
     } else {
       return (
@@ -43,12 +46,12 @@ class Consoles extends React.Component {
       />
 
         <div class="gameB2 gameList">
-          <h1>Consoles Database</h1>
+          <h1 class="textWhite">Consoles Database</h1>
           
 
 <Table striped bordered hover>
   <thead>
-    <tr>
+    <tr class="textWhite">
       <th>Image</th>
       <th>Name</th>
       <th>Stock</th>
@@ -62,7 +65,7 @@ class Consoles extends React.Component {
 
   {this.state.consoles.map(console => (
   
-    <tr key={`console_${console._id}`}>
+    <tr class="textWhite" key={`console_${console._id}`}>
     <td ><img class="CImage"src={console.image} alt="console Image"></img></td>
     <td>{console.name}</td>
     <td>{console.stock}</td>

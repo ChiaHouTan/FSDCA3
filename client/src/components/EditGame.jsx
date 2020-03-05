@@ -63,7 +63,7 @@ class EditGame extends React.Component {
               <label>game Trailer video:
                 <input class="inputVideo textItalic" type='' value={this.state.trailer} onChange={this.handleTrailerUpdate.bind(this)} 
                 required placeholder="e.g https://www.youtube.com/embed/8989ABAB"
-                pattern="(https://www.youtube.com/embed/)[a-zA-Z0-9]+"/>
+                pattern="(https://www.youtube.com/embed/)[^\&\?\/]+"/>
               </label>
             </div>
 

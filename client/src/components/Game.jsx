@@ -48,7 +48,7 @@ class Game extends React.Component {
 />
         <div class="gameB">
 
-          <table>
+          <table class="textWhite">
            <tr>
              <th colspan="2" class="gameTitle">{this.state.game.title}</th>
            </tr>
