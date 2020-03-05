@@ -1,14 +1,20 @@
 import React    from 'react';
 import {Router} from "@reach/router";
 //import Games   from './Games';
-import RPGs   from './RPGs';
+import Games   from './Games';
 import Game    from './Game';
-import AddRPG from './AddRPG';
+import AddGame from './AddGame';
 import EditGame from './EditGame';
+import Consoles   from './Consoles';
+import AddConsole from './AddConsole';
+import EditConsole from './EditConsole';
+import EditStock from './EditStock';
+import Logo from '../components/logo/PSStore.png';
 import '../components/sass/AllScss.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+
 
 class App extends React.Component {
 
@@ -18,25 +24,39 @@ class App extends React.Component {
       
 
       <div class="gameB">
+      <br></br>
+      <header>
+        <img class="headerImg" src={Logo}></img><p class="headerText">PlayStation&trade;</p>
+      </header>
+      <br></br>
 
       <Tabs className="tabStyle" defaultActiveKey="Games" id="uncontrolled-tab-example">
       <Tab className="tabStyle" eventKey="Games" title="Games">
       <Router>
-        <RPGs   path='/' />
+        <Games   path='/' />
         <Game    path='/game/:gameID' />
-        <AddRPG path='/add-game/' />
+        <AddGame path='/add-game/' />
         <EditGame path='/edit-game/:gameID' />
 
       </Router>
       </Tab>
-      <Tab className="tabStyle" eventKey="Computers" title="Computers">
+      <Tab className="tabStyle" eventKey="Consoles" title="Consoles">
+      <Router>
+        <Consoles   path='/' />
+        <AddConsole path='/add-console/' />
+        <EditConsole path='/edit-console/:consoleID' />
+        <EditStock path='/edit-stock/:consoleID' />
 
-      </Tab>
-      <Tab className="tabStyle" eventKey="Gaming Accessories" title="Gaming Accessories">
-
+      </Router>
       </Tab>
     </Tabs>
+<br></br>
+    <footer>
+    <p class="textBold textWhite">&copy; PlayStation 4 Games Website, by CHIA HOU TAN.(Full Stack Development CA3)</p>
+    </footer>
 </div>
+
+
     );
   }
 
