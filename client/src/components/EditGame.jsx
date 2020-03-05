@@ -1,5 +1,5 @@
 import React              from 'react';
-import {Link}   from '@reach/router';
+import {navigate, Link}   from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
@@ -138,6 +138,7 @@ class EditGame extends React.Component {
         }
         return res.json();
       })
+      .then (json => navigate(`/`))
       .catch(err => {
         this.setState({reportedError: err.message || 'Unknown'});
       })

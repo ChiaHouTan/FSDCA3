@@ -3,7 +3,7 @@ import {navigate, Link}   from '@reach/router';
 import urlToCurrentDomain from '../lib/urlToCurrentDomain';
 import * as Config        from '../config.json'
 
-class AddRPG extends React.Component {
+class AddGame extends React.Component {
 
   // #######################################################
   // # Local state
@@ -140,7 +140,7 @@ class AddRPG extends React.Component {
         }
         return res.json();
       })
-      .then (json => navigate(`/game/${json._id}`))
+      .then (json => navigate(`/`))
       .catch(err => {
         this.setState({reportedError: err.message || 'Unknown'});
       })
@@ -157,4 +157,4 @@ class AddRPG extends React.Component {
 
 }
 
-export default AddRPG;
+export default AddGame;

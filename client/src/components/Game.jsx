@@ -60,15 +60,15 @@ class Game extends React.Component {
 
           <Carousel>
   <Carousel.Item>
-  <img src={this.state.game.image} alt="Smiley face"></img>
+  <img src={this.state.game.image} alt="Game Image 1"></img>
   </Carousel.Item>
   
   <Carousel.Item>
-  <img src={this.state.game.image2} alt="Smiley face"></img>
+  <img src={this.state.game.image2} alt="Game Image 2"></img>
   </Carousel.Item>
 
   <Carousel.Item>
-  <img src={this.state.game.image3} alt="Smiley face"></img>
+  <img src={this.state.game.image3} alt="Game Image 3"></img>
   </Carousel.Item>
 </Carousel>
 
