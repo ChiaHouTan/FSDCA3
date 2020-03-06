@@ -45,11 +45,11 @@ class AddConsole extends React.Component {
                 <input type='' value={this.state.name} onChange={this.handleNameUpdate.bind(this)} required/>
               </label><br></br>
               <label>console Image:
-                <input type='' value={this.state.image} onChange={this.handleImageUpdate.bind(this)} required/>
+                <input class="inputImage" type='' value={this.state.image} onChange={this.handleImageUpdate.bind(this)} required/>
                </label><br></br>
               <label>console Stock:
-                <input type='' value={this.state.stock} onChange={this.handleStockUpdate.bind(this)} 
-                pattern="[0-9]+" required/>
+                <input class="textItalic" type='' value={this.state.stock} onChange={this.handleStockUpdate.bind(this)} 
+                pattern="[0-9]+" placeholder=" e.g 123" required/>
               </label>
             </div>
 
