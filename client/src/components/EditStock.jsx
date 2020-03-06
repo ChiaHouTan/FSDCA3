@@ -41,8 +41,8 @@ class EditStock extends React.Component {
 
             <div class="textBold textWhite">
               <label>console Stock:
-                <input type='' value={this.state.stock} onChange={this.handleStockUpdate.bind(this)} 
-                pattern="[0-9]+" required/>
+                <input class="textItalic" type='' value={this.state.stock} onChange={this.handleStockUpdate.bind(this)} 
+                pattern="[0-9]+" placeholder="e.g 123" required/>
               </label>
             </div>
 
